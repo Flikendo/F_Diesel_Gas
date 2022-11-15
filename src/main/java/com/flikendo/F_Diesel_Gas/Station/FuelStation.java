@@ -122,7 +122,7 @@ public class FuelStation {
     }
 
     private void setLocation(String location) {
-        // 'Substring' and 'replace' are used since ALCANIZ has a strange character so in order to avoid this
+        // 'Substring' and 'replace' are used since ALCANIZ has a strange character so in order to avoid these
         // characters this way has been development
         String tmp = location.substring(location.indexOf("'"));
         this.location = tmp.replace("'", "");

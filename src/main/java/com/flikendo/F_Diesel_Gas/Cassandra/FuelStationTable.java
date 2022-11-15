@@ -1,6 +1,5 @@
 package com.flikendo.F_Diesel_Gas.Cassandra;
 
-import com.datastax.oss.driver.api.core.data.Data;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -8,7 +7,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Table
-public class GasStation {
+public class FuelStationTable {
     // Identifier
     @PrimaryKey
     private UUID id;
@@ -26,7 +25,7 @@ public class GasStation {
     /**
      * Constructor
      */
-    public GasStation(String business, String address, String location, Date date, String price) {
+    public FuelStationTable(String business, String address, String location, Date date, String price) {
         this.business = business;
         this.address = address;
         this.location = location;
