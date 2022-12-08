@@ -34,4 +34,6 @@ public class CassandraDB implements Connection{
     public boolean disconnect(String ip, String port) {
         return false;
     }
+
+
 }

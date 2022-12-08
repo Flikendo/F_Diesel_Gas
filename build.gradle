@@ -1,7 +1,8 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.0'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "com.google.protobuf" version "0.9.1"
 }
 
 group = 'com.flikendo'
@@ -9,18 +10,33 @@ version = '1.0'
 sourceCompatibility = '17'
 
 repositories {
-	mavenCentral()
-	mavenLocal()
+    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
-	implementation group: 'com.flikendo', name:'F_APIRest_Internet', version: '1.0'
+    // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '4.0.0-rc-2'
 //	implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-cassandra', version: '2.7.5'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-cassandra', version: '2.7.5'
+
+    // Own libraries
+    implementation group: 'com.flikendo', name: 'F_APIRest_Internet', version: '1.0'
+
+    // Own proto libraries
+//    implementation group: 'com.flikendo', name: 'F_Diesel_Gas_msg_lib', version: '1.0', ext: 'zip'
+}
+
+task unzipDynLib(type: Copy) {
+    def zipFile = file('src/main/java/com/flikendo/F_Diesel_Gas/F_Diesel_Gas_msg_lib-1.0.zip')
+    def outputDir = file("${buildDir}/unpacked/dist")
+
+    from zipTree(zipFile)
+    into outputDir
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
