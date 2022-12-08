@@ -1,6 +1,7 @@
 package com.flikendo.F_Diesel_Gas;
 
 import com.flikendo.F_Diesel_Gas.Connection.WebConnection;
+import com.flikendo.proto.FuelStationTub;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -39,15 +40,12 @@ class FDieselGasApplicationTests {
 
     @Test
     public void createProto() {
-        FuelStationTub.FuelStation john =
+        FuelStationTub.FuelStation fuelStation =
                 FuelStationTub.FuelStation.newBuilder()
-                        .setId(1234)
-                        .setName("John Doe")
-                        .setEmail("jdoe@example.com")
-                        .addPhones(
-                                Person.PhoneNumber.newBuilder()
-                                        .setNumber("555-4321")
-                                        .setType(Person.PhoneType.HOME))
+                        .setAddress("hodsfsdalf")
+                        .setType(FuelStationTub.TypeFuel.TYPE_GAS_95)
                         .build();
+
+        System.out.println(fuelStation.toString());
     }
 }
