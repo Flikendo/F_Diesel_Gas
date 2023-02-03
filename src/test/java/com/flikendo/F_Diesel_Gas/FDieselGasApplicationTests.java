@@ -42,10 +42,14 @@ class FDieselGasApplicationTests {
     public void createProto() {
         FuelStationTub.FuelStation fuelStation =
                 FuelStationTub.FuelStation.newBuilder()
-                        .setAddress("hodsfsdalf")
+                        .setBusiness("Gas Gas")
+                        .setDate("08/04/2022")
+                        .setLocation("New York")
+                        .setPrice(12.80)
+                        .setAddress("Curry Street")
                         .setType(FuelStationTub.TypeFuel.TYPE_GAS_95)
                         .build();
 
-        System.out.println(fuelStation.toString());
+        System.out.println(fuelStation);
     }
 }
