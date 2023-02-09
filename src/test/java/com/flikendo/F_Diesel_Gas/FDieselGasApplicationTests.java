@@ -35,7 +35,7 @@ class FDieselGasApplicationTests {
 
         String stations = formatData(str, FULL_INFO);
 
-        webConnection.storeStations(stations);
+        webConnection.createFuelStationProto(stations);
     }
 
     @Test

@@ -101,7 +101,7 @@ public class FuelStation {
         this.longitude = Utils.formatData(longitude, REG_EXP_PATTER_LON);
     }
 
-    private String getAddress() {
+    public String getAddress() {
         return address;
     }
 
@@ -136,7 +136,7 @@ public class FuelStation {
         this.province = Utils.formatData(province, REG_EXP_PATTERN_PROV);
     }
 
-    private String getTime() {
+    public String getTime() {
         return time;
     }
 
@@ -144,7 +144,7 @@ public class FuelStation {
         this.time = Utils.formatData(time, REG_EXP_PATTERN_TIME);
     }
 
-    private String getCompany() {
+    public String getCompany() {
         return company;
     }
 
@@ -168,7 +168,7 @@ public class FuelStation {
         this.updatedDate = Long.parseLong(Utils.formatData(updatedDate, REG_EXP_PATTERN_UPD_DATE));
     }
 
-    private String getPrice() {
+    public String getPrice() {
         return price;
     }
 
@@ -184,7 +184,7 @@ public class FuelStation {
         this.logo = Utils.formatData(logo, REG_EXP_PATTER_LOGO);
     }
 
-    private List<Fuel> getFuels() {
+    public List<Fuel> getFuels() {
         return fuels;
     }
 
@@ -204,6 +204,7 @@ public class FuelStation {
 
     /**
      * Method toString
+     *
      * @return string with all value of variables
      */
     @Override

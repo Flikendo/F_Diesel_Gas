@@ -12,6 +12,7 @@ public class Fuel {
 
     /**
      * Constructor of the class
+     *
      * @param shortFuel It is the short form of each kind of fuel e.g: SP95, SP98,... which is in the fuel station
      * @param price The price of each kind of fuel which is in the fuel station
      */
@@ -22,6 +23,7 @@ public class Fuel {
 
     /**
      * Method toString
+     *
      * @return string with all value of variables
      */
     @Override

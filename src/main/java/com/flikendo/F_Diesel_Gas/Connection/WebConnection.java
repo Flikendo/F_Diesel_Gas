@@ -2,6 +2,7 @@ package com.flikendo.F_Diesel_Gas.Connection;
 
 import com.flikendo.F_APIRest_Internet.Connection.APIWebConnection;
 import com.flikendo.F_Diesel_Gas.Station.FuelStation;
+import com.flikendo.proto.FuelStationTub;
 
 /**
  * Date: 03-17-2022
@@ -12,6 +13,7 @@ import com.flikendo.F_Diesel_Gas.Station.FuelStation;
 public class WebConnection {
     private APIWebConnection apiWebConnection;
     private String url;
+    private FuelStation station;
 
     /**
      * Constructor of the class
@@ -30,6 +32,7 @@ public class WebConnection {
 
     /**
      * Get data from URL
+     *
      * @return Data from URL
      */
     public String getDataUrl() {
@@ -38,15 +41,18 @@ public class WebConnection {
 
     /**
      * Stores fuel stations.
+     *
      * @param stations the gotten data from URL. It contains the different fuel stations which have to be split
      */
-    public void storeStations(String stations) {
-        System.out.println(stations);
+    public void storeFuelStation(String stations) {
+        System.out.println("ALL STATIONS: \n" + stations);
         String[] fuelStations = stations.split(";");
 
         for (String fuelStation : fuelStations) {
-            FuelStation station = new FuelStation(fuelStation);
-            System.out.println(station);
+            station = new FuelStation(fuelStation);
+            System.out.println("INFO STATION: \n" + station);
+
+            KafkaProtoProducer.createProto(station);
         }
     }
 }
