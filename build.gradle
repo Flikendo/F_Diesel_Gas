@@ -27,7 +27,7 @@ dependencies {
 
     // Own libraries
     implementation group: 'com.flikendo', name: 'F_APIRest_Internet', version: '1.0'
-    protobuf group: 'com.flikendo', name: 'F_Diesel_Gas_msg_lib', version: '1.0'
+    implementation group: 'com.flikendo', name: 'F_Diesel_Gas_msg_lib', version: '1.0'
 }
 
 protobuf {

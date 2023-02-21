@@ -35,21 +35,21 @@ class FDieselGasApplicationTests {
 
         String stations = formatData(str, FULL_INFO);
 
-        webConnection.createFuelStationProto(stations);
+        webConnection.storeFuelStation(stations);
     }
 
     @Test
     public void createProto() {
-        FuelStationTub.FuelStation fuelStation =
-                FuelStationTub.FuelStation.newBuilder()
-                        .setBusiness("Gas Gas")
-                        .setDate("08/04/2022")
-                        .setLocation("New York")
-                        .setPrice(12.80)
-                        .setAddress("Curry Street")
-                        .setType(FuelStationTub.TypeFuel.TYPE_GAS_95)
-                        .build();
-
-        System.out.println(fuelStation);
+//        FuelStationTub.FuelStation fuelStation =
+//                FuelStationTub.FuelStation.newBuilder()
+//                        .setBusiness("Gas Gas")
+//                        .setDate("08/04/2022")
+//                        .setLocation("New York")
+//                        .setPrice(12.80)
+//                        .setAddress("Curry Street")
+//                        .setType(FuelStationTub.Fuel.TYPE_GAS_95)
+//                        .build();
+//
+//        System.out.println(fuelStation);
     }
 }

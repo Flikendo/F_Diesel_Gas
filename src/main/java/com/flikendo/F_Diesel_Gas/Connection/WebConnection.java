@@ -13,7 +13,6 @@ import com.flikendo.proto.FuelStationTub;
 public class WebConnection {
     private APIWebConnection apiWebConnection;
     private String url;
-    private FuelStation station;
 
     /**
      * Constructor of the class
@@ -49,7 +48,7 @@ public class WebConnection {
         String[] fuelStations = stations.split(";");
 
         for (String fuelStation : fuelStations) {
-            station = new FuelStation(fuelStation);
+            FuelStation station = new FuelStation(fuelStation);
             System.out.println("INFO STATION: \n" + station);
 
             KafkaProtoProducer.createProto(station);

@@ -50,17 +50,17 @@ public class KafkaProtoProducer {
     /**
      * Creates a protobuf then it is sent to Kafka
      *
-     * @param protoTub object to send
+     * @param station object to send
      */
-    public static void createProto(FuelStation protoTub) {
+    public static void createProto(FuelStation station) {
 
         FuelStationTub.FuelStation fuelStationProto = FuelStationTub.FuelStation
                 .newBuilder()
-                .setFuel(protoTub.getFuels().get(0))
-                .setLocation(protoTub.getLocation())
-                .setDate(protoTub.getTime())
-                .setAddress(protoTub.getAddress())
-                .setBusiness(protoTub.getCompany())
+                .setFuel(FuelStationTub.Fuel.GAS_95)
+                .setLocation(station.getLocation())
+                .setDate(station.getTime())
+                .setAddress(station.getAddress())
+                .setBusiness(station.getCompany())
                 .build();
 
         sendProtobuf(fuelStationProto);
