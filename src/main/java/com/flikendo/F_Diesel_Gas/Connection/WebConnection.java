@@ -2,7 +2,6 @@ package com.flikendo.F_Diesel_Gas.Connection;
 
 import com.flikendo.F_APIRest_Internet.Connection.APIWebConnection;
 import com.flikendo.F_Diesel_Gas.Station.FuelStation;
-import com.flikendo.proto.FuelStationTub;
 
 /**
  * Date: 03-17-2022
